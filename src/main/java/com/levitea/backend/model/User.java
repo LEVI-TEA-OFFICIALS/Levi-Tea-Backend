@@ -11,12 +11,49 @@ public class User {
     @GeneratedValue
     private Long id;
     private String username;
+    private String password;
     private String name;
     private String email;
     private String phoneNo;
     private Integer rank;
     private String address;
     private String city;
+    private String Discount;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getDiscount() {
+        return Discount;
+    }
+
+    public void setDiscount(String discount) {
+        Discount = discount;
+    }
+
+    public String getExtra_Discount() {
+        return extra_Discount;
+    }
+
+    public void setExtra_Discount(String extra_Discount) {
+        this.extra_Discount = extra_Discount;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    private String extra_Discount;
+    private String type;
 
     public Long getId() {
         return id;
