@@ -1,4 +1,4 @@
-package com.levitea.backend.model;
+package com.levitea.backend.dao.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,7 +12,6 @@ public class Order {
     private Product product;
     private double quantity;
     private String price;
-
     public Long getId() {
         return Id;
     }

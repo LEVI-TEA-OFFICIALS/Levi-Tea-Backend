@@ -1,4 +1,4 @@
-package com.levitea.backend.model;
+package com.levitea.backend.dao.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,7 +18,8 @@ public class User {
     private Integer rank;
     private String address;
     private String city;
-    private String Discount;
+    private String userDiscount;
+    private String type;
 
     public String getPassword() {
         return password;
@@ -29,11 +30,11 @@ public class User {
     }
 
     public String getDiscount() {
-        return Discount;
+        return userDiscount;
     }
 
     public void setDiscount(String discount) {
-        Discount = discount;
+        userDiscount = discount;
     }
 
     public String getExtra_Discount() {
@@ -53,7 +54,6 @@ public class User {
     }
 
     private String extra_Discount;
-    private String type;
 
     public Long getId() {
         return id;

@@ -1,7 +1,7 @@
 package com.levitea.backend.service;
 
 
-import com.levitea.backend.model.User;
+import com.levitea.backend.dao.model.User;
 
 import java.util.Optional;
 

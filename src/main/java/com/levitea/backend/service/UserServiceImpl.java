@@ -1,7 +1,7 @@
 package com.levitea.backend.service;
 
-import com.levitea.backend.model.User;
-import com.levitea.backend.repository.UserRepository;
+import com.levitea.backend.dao.model.User;
+import com.levitea.backend.dao.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

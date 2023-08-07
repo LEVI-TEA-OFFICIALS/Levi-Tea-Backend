@@ -1,17 +1,15 @@
 package com.levitea.backend.controller;
 
 import com.levitea.backend.exception.UserNotFoundException;
-import com.levitea.backend.model.User;
+import com.levitea.backend.dao.model.User;
 import com.levitea.backend.service.UserService;
-import com.levitea.backend.repository.UserRepository;
+import com.levitea.backend.dao.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,11 +22,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
     private UserService userService;
-
 
     @PostMapping("/user")
     User newUser(@RequestBody User newUser){
@@ -40,8 +34,8 @@ public class UserController {
         return userRepository.findAll();
     }
 
-//    @GetMapping("/getUserById/{id}")
-//    Optional<User> getUserById(@PathVariable("id") Long id){return userService.getUserById(id);}
+    @GetMapping("/getUserById/{id}")
+    Optional<User> getUserById(@PathVariable("id") Long id){return userService.getUserById(id);}
 //
 ////    @GetMapping("/getUserByUsername/{username}")
 ////    Optional<User> getUserByUsername(@PathVariable("username") String username){return Optional.ofNullable(userService.getUserByUsername(username));}
