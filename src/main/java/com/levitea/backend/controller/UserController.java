@@ -34,11 +34,17 @@ public class UserController {
 //        return userRepository.findAll();
 //    }
 
+    @GetMapping("/users")
+    List<User> getAllUsers(){
+        return userService.getAllUsers();
+    }
+
     @GetMapping("/getUserById/{id}")
     Optional<User> getUserById(@PathVariable("id") Long id){return userService.getUserById(id);}
 
     @GetMapping("/getUserByUsername/{username}")
-    Optional<User> getUserByUsername(@PathVariable("username") String username){return Optional.ofNullable(userService.getUserByUsername(username));}
+    Optional<User> getUserByUsername(@PathVariable("username") String username){
+        return Optional.ofNullable(userService.getUserByUsername(username));}
 
     @DeleteMapping ("/deleteUserById/{id}")
     Optional<User> deleteUserById(@PathVariable("id") Long id){return userService.deleteUserById(id);}
