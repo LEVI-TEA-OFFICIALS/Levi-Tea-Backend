@@ -6,7 +6,7 @@ import com.levitea.backend.dao.model.Customer;
 import java.util.List;
 import java.util.Optional;
 
-public interface UserService {
+public interface CustomerService {
 
     //get all users
     List<Customer> getAllUsers();
@@ -19,11 +19,11 @@ public interface UserService {
 
 
     //delete a user based on ID
-    Optional<Customer> deleteUserById(Long id);
+    Customer deleteUserById(Long id);
 
     //update a user based on ID
     Customer updateUser(Customer user, Long id);
 
-    
+
 
 }
