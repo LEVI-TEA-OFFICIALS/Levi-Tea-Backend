@@ -39,6 +39,11 @@ public class CustomerServiceImpl implements CustomerService {
         return null;
     }
 
+    @Override
+    public Customer addCustomer(Customer customer){
+        return userRepository.save(customer);
+    }
+
     //update a user based on ID
     @Override
     public Customer updateUser(Customer customer, Long id) {

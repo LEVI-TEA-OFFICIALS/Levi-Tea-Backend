@@ -17,13 +17,12 @@ public interface CustomerService {
     //get user by username
     Customer getUserByUsername(String username);
 
+    Customer addCustomer(Customer customer);
 
     //delete a user based on ID
     Customer deleteUserById(Long id);
 
     //update a user based on ID
     Customer updateUser(Customer user, Long id);
-
-
 
 }

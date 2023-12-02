@@ -1,6 +1,7 @@
 package com.levitea.backend.controller;
 
 import com.levitea.backend.dao.model.Customer;
+import com.levitea.backend.dao.model.ShopOwner;
 import com.levitea.backend.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,20 +21,25 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @GetMapping("/customer")
+    @PostMapping("/customers")
+    public Customer addCustomer(@RequestBody Customer customer){
+        return customerService.addCustomer(customer);
+    }
+
+    @GetMapping("/customers")
     List<Customer> getAllUsers(){
         return customerService.getAllUsers();
     }
 
-    @GetMapping("/getCustomerById/{id}")
+    @GetMapping("/customers/{id}")
     Optional<Customer> getUserById(@PathVariable("id") Long id){return customerService.getUserById(id);}
 
-    @GetMapping("/getCustomerByUsername/{username}")
+    @GetMapping("/Customers/{username}")
     Customer getUserByUsername(@PathVariable("username") String username){
         return customerService.getUserByUsername(username);
     }
 
-    @DeleteMapping("/deleteCustomerById/{id}")
+    @DeleteMapping("/customers/{id}")
    Customer deleteUserById(@PathVariable("id") Long id){return customerService.deleteUserById(id);}
 
 }
