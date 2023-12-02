@@ -3,10 +3,12 @@ package com.levitea.backend.service.serviceImpl;
 import com.levitea.backend.dao.model.Product;
 import com.levitea.backend.dao.repository.ProductRepository;
 import com.levitea.backend.service.ProductService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
     ProductRepository productRepository;

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class CustomerController {
     }
 
     @GetMapping("/getCustomerById/{id}")
-    Customer getUserById(@PathVariable("id") Long id){return customerService.getUserById(id);}
+    Optional<Customer> getUserById(@PathVariable("id") Long id){return customerService.getUserById(id);}
 
     @GetMapping("/getCustomerByUsername/{username}")
     Customer getUserByUsername(@PathVariable("username") String username){

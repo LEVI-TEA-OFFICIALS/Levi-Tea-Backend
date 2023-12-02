@@ -11,15 +11,18 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ShopOwner extends User{
+public class ShopOwner{
+    @Id
+    @GeneratedValue
     private Long id;
+    private String username;
+    private String password;
+    private String name;
+    private String shopName;
+    private String email;
+    private String phoneNo;
+    private Integer rank=0;
     private String shopAddress;
     private String city;
     private String shopDiscount;
-    private String shopName;
-
-//    public ShopOwner(){
-//        super();
-//    }
-
 }
