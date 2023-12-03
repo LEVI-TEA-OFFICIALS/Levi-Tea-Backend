@@ -34,7 +34,7 @@ public class CustomerController {
     @GetMapping("/customers/{id}")
     Optional<Customer> getUserById(@PathVariable("id") Long id){return customerService.getUserById(id);}
 
-    @GetMapping("/Customers/{username}")
+    @GetMapping("/customers/name/{username}")
     Customer getUserByUsername(@PathVariable("username") String username){
         return customerService.getUserByUsername(username);
     }

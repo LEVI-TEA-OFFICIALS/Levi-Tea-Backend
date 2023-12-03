@@ -4,6 +4,8 @@ import com.levitea.backend.utils.Constants.CustomerType;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -20,8 +22,12 @@ public class Customer {
     private Integer rank=0;
     private String address;
     private String city;
-    private String userDiscount;
+    private String discount;
     private String shopName;
-//    @Enumerated(EnumType.STRING)
-//    private CustomerType customerType;
+
+    @Enumerated(EnumType.STRING)
+    private CustomerType customerType;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Order> orders;
 }

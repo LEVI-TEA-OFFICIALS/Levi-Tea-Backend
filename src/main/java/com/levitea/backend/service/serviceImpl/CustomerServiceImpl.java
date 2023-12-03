@@ -29,7 +29,7 @@ public class CustomerServiceImpl implements CustomerService {
     //get user by username
     @Override
     public Customer getUserByUsername(String username){
-        return (Customer) userRepository.findByUsername(username);
+        return userRepository.findByUsername(username);
     }
 
     @Override
