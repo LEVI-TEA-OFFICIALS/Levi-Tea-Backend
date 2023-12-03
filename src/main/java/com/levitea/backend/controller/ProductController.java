@@ -3,6 +3,7 @@ package com.levitea.backend.controller;
 import com.levitea.backend.dao.model.Product;
 import com.levitea.backend.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public class ProductController {
     ProductService productService;
 
     @PostMapping("products")
-    public Product addProduct(@PathVariable("id") Product product){
+    public Product addProduct(@RequestBody Product product){
         return productService.addProduct(product);
     }
 
@@ -30,8 +31,9 @@ public class ProductController {
     }
 
     @GetMapping("/products")
-    public List<Product> getAllProducts(){
-        return productService.getAllProducts();
+    public ResponseEntity<List<Product>> getAllProducts(){
+        List<Product> allProducts =  productService.getAllProducts();
+        return (allProducts != null) ? ResponseEntity.ok(allProducts) : ResponseEntity.notFound().build();
     }
 
     @GetMapping("/products/{id}")

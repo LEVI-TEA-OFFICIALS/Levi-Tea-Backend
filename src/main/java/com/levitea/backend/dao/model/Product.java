@@ -1,8 +1,7 @@
 package com.levitea.backend.dao.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import com.levitea.backend.utils.Constants.ProductSize;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -13,7 +12,8 @@ public class Product {
     private Long id;
     private String name;
     private String username;
-    private String size;
+    @Enumerated()
+    private ProductSize productSize;
     private double mrp;
     private String type;
     private double mrpDiscount;
